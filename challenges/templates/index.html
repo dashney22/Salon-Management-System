@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{%block content %}
+ 
+
+
+
+  <div class="mt-1 mb-2">
+    <h2><strong>Books List</strong> </h2>
+  </div>
+
+
+  <table class="table table-stripped table-dark">
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Published
+      </th>
+    </tr>
+    {% for book in books %}
+    <tbody>
+      <tr>
+        <td> {{book.name}}</td>
+        <td> R{{book.price}}</td>
+        <td> {{book.is_published}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+{% endblock %}

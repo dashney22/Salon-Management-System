@@ -1,0 +1,10 @@
+.navbar{
+  color: black !important;
+  background-color:  #FFC0CB !important;
+  font-weight: bold !important;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.navbar .navbar-brand{
+  font-size: large;
+  font-weight: bold !important;
+}

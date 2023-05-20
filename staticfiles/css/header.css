@@ -1,0 +1,7 @@
+.navbar-nav {
+  margin-right: auto; /* This pushes the navbar links to the left */
+}
+
+.navbar-brand {
+  margin-right: auto; /* This pushes the brand logo to the left */
+}
