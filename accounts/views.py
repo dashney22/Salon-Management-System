@@ -13,10 +13,10 @@ def login_view(request):
             login(request,user)
             return redirect(reverse('home'))
         else:
-            messages.error(request, 'Invalid username or password')
+            messages.error(request, 'Enter correct username or password')
             return redirect('login')
     else:
-        return render(request, "login.html", {}) # USer just went to the page!!!!
+        return render(request, "login.html", {}) # User just went to the page!!!!
 
 def logout_view(request):
     logout(request)
