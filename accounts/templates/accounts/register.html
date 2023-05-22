@@ -5,7 +5,7 @@
 <br />
 <br />
 <h1>User Registration page</h1>
-
+<br />
 <div class="container">
   {% if messages %}
   {% for message in messages %}
@@ -17,13 +17,15 @@
 {% endif %}
 </div>
 
+<div class="mt-2">
+  <form method="POST">
+    {%csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Register</button>
+  
+    <p>have an account already? click <a href="{%url 'login'%}"> Here to Login</a></p>
+  </form>
+</div>
 
-<form method="POST">
-  {%csrf_token %}
-  {{form.as_p}}
-  <button type="submit">Register</button>
-
-  <p>have an account already? click <a href="{%url 'login'%}"> Here to Login</a></p>
-</form>
 
 {% endblock %}

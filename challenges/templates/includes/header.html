@@ -17,7 +17,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                
+                {%if user.is_authenticated%}
+                    <li class="nav-item">
+                      <a class="nav-link fs-6">Welcome, <strong> {{ user.username }}</strong></a>
+                    </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
