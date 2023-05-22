@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+<br />
+<br />
+<h1>User Registration page</h1>
+
+<div class="container">
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+{% endif %}
+</div>
+
+
+<form method="POST">
+  {%csrf_token %}
+  {{form.as_p}}
+  <button type="submit">Register</button>
+</form>
+
+{% endblock %}
