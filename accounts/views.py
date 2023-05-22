@@ -15,9 +15,9 @@ def login_view(request):
             return redirect(reverse('home'))
         else:
             messages.error(request, 'Enter correct username or password')
-            return redirect('login')
+            return redirect(reverse('login'))
     else:
-        return render(request, "login.html", {}) # User just went to the page!!!!
+        return render(request, "accounts/login.html", {}) # User just went to the page!!!!
 
 def logout_view(request):
     logout(request)
@@ -34,4 +34,4 @@ def register_view(request):
             return redirect('register')
     else:
         form = UserCreationForm()  # Give the user an empty form since they did not post anything
-        return redirect(request,"register.html",{'form':form})
+        return render(request,"accounts/register.html",{'form':form})
