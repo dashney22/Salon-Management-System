@@ -7,9 +7,9 @@ body{
 }
 .container{
   flex: 1;
-}
+} 
 .footer {
-  background-color: pink;
+  background-color: #FF69B4;
   color: black;
   padding: 20px;
   text-align: center;

@@ -1,0 +1,89 @@
+.card {
+  margin-bottom: 20px;
+}
+.dashboard-card .card-body{
+  color: white;
+}
+.dashboard-card.custom-1 .card-body {
+  background-color: #ffc107; /* Yellow */
+}
+
+.dashboard-card.custom-2 .card-body {
+  background-color: #28a745; /* Green */
+}
+
+.dashboard-card.custom-3 .card-body {
+  background-color: #dc3545; /* Red */
+}
+
+.dashboard-card.custom-4 .card-body {
+  background-color: #007bff; /* Blue */
+}
+
+.dashboard-card.custom-5 .card-body {
+  background-color: #6c757d; /* Gray */
+}
+
+.dashboard-card.custom-6 .card-body {
+  background-color: #17a2b8; /* Cyan */
+}
+
+.dashboard-card .card-footer{
+  background-color: #ce29a2;
+  color: #fff;
+}
+.dashboard-title{
+  background-color: rgba(223, 37, 155, 0.918);
+  padding: 20px;
+  text-align: left;
+  color: #fff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+/**
+ABOUT US CSS
+**/
+.hero {
+  background-color: rgba(223, 37, 155, 0.918);
+  padding: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Content section styles */
+.content {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(223, 37, 155, 0.918);
+}
+
+.content h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.content ul {
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.content ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* Footer styles 
+footer {
+  background-color: #333;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}

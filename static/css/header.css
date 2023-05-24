@@ -1,10 +1,22 @@
 .navbar{
-  color: black !important;
-  background-color:  #FFC0CB !important;
+  color: white !important;
+  background-color:  #FF69B4 !important;
   font-weight: bold !important;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.navbar li a{
+ color: white !important;
 }
 .navbar .navbar-brand{
   font-size: large;
   font-weight: bold !important;
+}
+
+/***
+CSS FOR ACTIVE LINK
+
+**/
+.navbar-nav .nav-item .active {
+  background-color: #ce29a2;
+  color: #fff;
 }

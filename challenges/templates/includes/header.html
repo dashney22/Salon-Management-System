@@ -1,55 +1,61 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="{% static 'css/header.css'%}" rel="stylesheet">
     <title>Salon Management System</title>
-    
+
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="{% url 'home' %}">Braids By Nkwane</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 {%if user.is_authenticated%}
-                    <li class="nav-item">
-                      <a class="nav-link fs-6">Welcome, <strong> {{ user.username }}</strong></a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-6">Welcome, <strong> {{ user.username }}</strong></a>
+                </li>
                 {% endif %}
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Appointments</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Bookings</a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Analytics</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 {% if user.is_authenticated %}
-                <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                <li class="nav-item {% if request.path == '/logout/' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
                 {% else %}
+                <li class="nav-item {% if request.path == '/login/' %}active{% endif %}">
                     <a class="nav-link" href="{% url 'login' %}">Login</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {% if request.path == '/register/' %}active{% endif %}">
                     <a class="nav-link" href="{% url 'register' %}">Register</a>
                 </li>
                 {% endif %}
-                
+
+
             </ul>
         </div>
     </nav>
-     <!-- JavaScript dependencies (Bootstrap) -->
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- JavaScript dependencies (Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
