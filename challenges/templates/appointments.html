@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{%block content %}
+
+<!-- appointments.html -->
+
+<h1>Appointments</h1>
+<div class="d-flex justify-content-end">
+  <a class="btn btn-primary ml-auto"> Add Appointment</a>
+</div>
+<div class="table-responsive mt-3">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Customer Name</th>
+        <th>Service</th>
+        <th>Created Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for appointment in appointments %}
+      <tr>
+        <td>{{ appointment.customer.first_name }} {{ appointment.customer.last_name }}</td>
+        <td>{{ appointment.service.get_name_display }}</td>
+        <td>{{ appointment.booking_date }}</td>
+        <td class="appointment_css"> <a class="btn btn-info"> Edit</a> <a class="btn btn-danger"> Delete</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}

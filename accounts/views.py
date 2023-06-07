@@ -7,8 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 #Get your about us page
 
-def about_us(request):
-    return render(request, 'about.html')
+
 
 def login_view(request):
     if request.method== "POST":  #if user filled out the form do the following

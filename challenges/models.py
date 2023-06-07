@@ -69,4 +69,4 @@ class Appointment(models.Model):
     booking_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.customer.name} - {self.service.name}"
+        return f"{self.customer.first_name} - {self.service.name}"

@@ -6,12 +6,10 @@ CSS FOR LANDING PAGE
 /* Custom CSS for the landing page */
 .landing-container {
   position: relative;
-  height: 80vh;
-  background-image: linear-gradient(rgba(146, 76, 111, 0.8), rgba(255, 105, 180, 0.3)), url('/static/img/chuenza.PNG');
+  height: 100vh;
+  background-image: linear-gradient(rgba(255, 105, 180, 0.8), rgba(255, 105, 180, 0.3)), url('../media/staff/chuenza.PNG');
   background-size: cover;
   background-position: center;
-  border: 1px solid #ccc;
-  margin-bottom: 25px
 }
 
 .landing-text {

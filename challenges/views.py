@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.views import View
-from .models import Book
+from .models import *
 from rest_framework import viewsets, status
 from rest_framework.exceptions import MethodNotAllowed
 from rest_framework.response import Response
@@ -9,6 +9,12 @@ from rest_framework.decorators import api_view
 from .serializers import BookSerializer
 from django.contrib.auth.decorators import login_required
 
+def about_us(request):
+    return render(request, 'about.html')
+
+def appointments(request):
+    appointments = Appointment.objects.all()
+    return render(request, 'appointments.html', {'appointments': appointments})
 
 # Create your views here[Function-Based View].
 @login_required
