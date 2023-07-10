@@ -5,10 +5,7 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-# Create your views here.
-#Get your about us page
-
-
+# Create your Authentication Views here.
 
 def login_view(request):
     if request.method== "POST":  #if user filled out the form do the following
@@ -38,11 +35,13 @@ def register_view(request):
         if password==confirm:
             #check is user exists in the database:
             if User.objects.filter(username=username).exists():
-                messages.error(request, "User Already Exists")
+                messages.error(request, "Username Already Taken")
             else:
                 #create user and redirect to login
                 User.objects.create_user(username=username, password=password)
                 messages.success(request, "User Created Successfully")
-                return redirect('login')
+                return redirect('login') 
+        else:
+            messages.error(request, "Passwords do not match")
        
     return render(request,"accounts/register.html")
