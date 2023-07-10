@@ -45,3 +45,5 @@ def appointments(request):
     appointments = Appointment.objects.all()
     return render(request, 'appointments.html', {'appointments': appointments})
 
+def getServices(request):
+    return render(request, "services.html")

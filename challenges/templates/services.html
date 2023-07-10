@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content %}
+<style>
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover ; /* Set a fixed height for the images */
+    margin-bottom: 10px;/* Ensure images maintain their aspect ratio */
+  }
+  .card h5 {
+    margin-top: 0;
+  }
+  .card p {
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="container">
+  <section class="hero">
+    <h1>Services</h1>
+  </section>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{% static 'img/tribal.jpeg' %}" alt="Image 1">
+        <h5>Service 1</h5>
+        <p>Short description of Service 1</p>
+        <p>Price: $10</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{% static 'img/passion.jpg' %}" alt="Image 2">
+        <h5>Service 2</h5>
+        <p>Short description of Service 2</p>
+        <p>Price: $20</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{% static 'img/feed-in.jpg' %}" alt="Image 3">
+        <h5>Service 3</h5>
+        <p>Short description of Service 3</p>
+        <p>Price: $30</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{% static 'img/box.PNG' %}" alt="Image 4">
+        <h5>Service 4</h5>
+        <p>Short description of Service 4</p>
+        <p>Price: $40</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{% static 'img/bantu.PNG' %}" alt="Image 5">
+        <h5>Service 5</h5>
+        <p>Short description of Service 5</p>
+        <p>Price: $50</p>
+      </div>
+    </div>
+
+    <!-- Add another card here for the third row -->
+  </div>
+</div>
+{% endblock %}
