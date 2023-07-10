@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 #Get your about us page
@@ -29,13 +30,19 @@ def logout_view(request):
 
 def register_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login') #If data supplied is in the correct format, then we send you to login page
-        else:
-            messages.error(request, "Invalid User Registration data")
-            return redirect('register')
-    else:
-        form = UserCreationForm()  # Give the user an empty form since they did not post anything
-        return render(request,"accounts/register.html",{'form':form})
+        username = request.POST['username']
+        password = request.POST['password']
+        confirm = request.POST['confirm_password']
+
+        #Check if the passwords match
+        if password==confirm:
+            #check is user exists in the database:
+            if User.objects.filter(username=username).exists():
+                messages.error(request, "User Already Exists")
+            else:
+                #create user and redirect to login
+                User.objects.create_user(username=username, password=password)
+                messages.success(request, "User Created Successfully")
+                return redirect('login')
+       
+    return render(request,"accounts/register.html")

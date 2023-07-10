@@ -1,5 +1,5 @@
 .login-card{
-width: 450px;
+width: 750px;
 margin: 0 auto;
 margin-top: 50px;
 border: 1px solid #ccc;
@@ -9,6 +9,7 @@ padding: 20px;}
   background-color: #FF69B4;
   color: #fff;
   padding: 10px;
+  text-align: center;
   margin-top: 0;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;

@@ -4,8 +4,6 @@
 
 <br />
 <br />
-<h1>User Registration page</h1>
-<br />
 <div class="container">
   {% if messages %}
   {% for message in messages %}
@@ -17,15 +15,34 @@
 {% endif %}
 </div>
 
-<div class="mt-2">
+<div class="login-card mt-2">
+  <div class="card-body">
+    <h5 class="card-title">Register</h5>
   <form method="POST">
-    {%csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Register</button>
-  
-    <p>have an account already? click <a href="{%url 'login'%}"> Here to Login</a></p>
+    {% csrf_token %}
+    
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" name="username">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input class="form-control" type="password" name="password"/>
+    </div>
+   
+    
+    <div class="mb-3">
+      <label for="confirm_password">Confirm Password</label>
+      <input class="form-control" type="password" id="confirm_password" name="confirm_password" required>
+    </div>
+    
+    <input type="submit" value="Submit" class="btn btn-info" />
   </form>
+  
+  <p>Already have an account? Click <a href="{% url 'login' %}">here to login</a>.</p>
+  </div>
 </div>
+
 
 
 {% endblock %}
