@@ -13,6 +13,9 @@ CSS FOR LANDING PAGE
   border: 1px solid #ccc;
   margin-bottom: 25px
 }
+body {
+  background: linear-gradient(to bottom, #f5e4e7, #ff91f2) !important;
+}
 
 .landing-text {
   position: absolute;
