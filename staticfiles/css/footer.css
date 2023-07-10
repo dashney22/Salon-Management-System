@@ -10,7 +10,7 @@ body{
 } 
 .footer {
   background-color: #FF69B4;
-  color: black;
+  color: rgb(253, 249, 249);
   padding: 20px;
   text-align: center;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);

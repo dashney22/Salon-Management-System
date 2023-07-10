@@ -11,7 +11,8 @@ CSS FOR LANDING PAGE
   background-size: cover;
   background-position: center;
   border: 1px solid #ccc;
-  margin-bottom: 25px
+  margin-bottom: 25px;
+  border-radius: 2px;
 }
 body {
   background: linear-gradient(to bottom, #f5e4e7, #ff91f2) !important;

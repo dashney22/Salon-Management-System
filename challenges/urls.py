@@ -7,5 +7,6 @@ urlpatterns = [
      path('about/', about_us, name='about'),
      path('appointments/', appointments, name='appointments'),
      path('services/',getServices, name='services'),
+     path('contact/', getOptions, name="contact"),
      path('appointment/<int:appointment_id>/update', update_appoitnment, name='update_appointment'),
 ]

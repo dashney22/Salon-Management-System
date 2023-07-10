@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{%block content %}
+<section>
+  <div class="hero">
+<h4> Schedule an Appointment</h4>
+  </div>
+</section>
+<div class="contact-card">
+  <div class="card-body">
+  <form method="post" action="{% url 'contact' %}">
+    {% csrf_token %}
+    <!-- Other form fields -->
+    <div class="mb-3">
+      <label for="names" class="form-label">Names</label>
+      <input type="text" class="form-control" name="names">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email">
+    </div>
+    <div class="mb-3">
+      <label for="id_hairstyle" class="form-label">Choose Hairstyle</label>
+      <select id="id_hairstyle" name="hairstyle" class="form-control">
+        {% for service in services %}
+        <option value="{{ service.name }}">{{ service.get_name_display }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    
+    <button type="submit">Submit</button>
+  </form>
+  </div>
+</div>
+
+{% endblock %}

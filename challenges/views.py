@@ -46,4 +46,10 @@ def appointments(request):
     return render(request, 'appointments.html', {'appointments': appointments})
 
 def getServices(request):
-    return render(request, "services.html")
+    services = Service.objects.all()
+    return render(request, "services.html", {'services': services})
+
+def getOptions(request):
+    services = Service.objects.values_list('name', flat=True) #flat=true returns a list instead of a turple
+    servs= Service.objects.all()
+    return render(request, 'contact.html', {'services': servs})
