@@ -13,9 +13,11 @@ from .forms import updateAppointment
 from django.contrib import messages
 from django.urls import reverse
 
+@login_required
 def about_us(request):
     return render(request, 'about.html')
 
+@login_required
 def update_appoitnment(request, appointment_id):
     appointment = get_object_or_404(Appointment, pk=appointment_id) #First get the appointment
 
@@ -33,15 +35,15 @@ def update_appoitnment(request, appointment_id):
 
     return render(request, 'update_appointment.html',{'form':form})
 
+@login_required
 def appointments(request):
     appointments = Appointment.objects.all()
     return render(request, 'appointments.html', {'appointments': appointments})
 
 # Create your views here[Function-Based View].
 @login_required
-def firstFunction(request):
-    books = Book.objects.all()
-    return render(request,'index.html',{'books': books})
+def HomePage(request):
+    return render(request,'index.html')
 
 #CLASS based View
 '''
