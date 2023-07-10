@@ -59,6 +59,7 @@ class Service(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=8, decimal_places=2)
     duration = models.IntegerField(help_text="Duration in minutes")
+    image = models.ImageField(upload_to="img", default="img/chuenza.PNG")
 
     def __str__(self):
         return self.name
