@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{%block content %}
+
+<div class="login-card">
+  <div class="card-body">
+    <h5 class="card-title">Update Appointment</h5>
+    <form method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Submit" class="btn btn-info" />
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+

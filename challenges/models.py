@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 #This one was meant for testing purposes
 class Book(models.Model):
@@ -66,7 +67,8 @@ class Service(models.Model):
 class Appointment(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    booking_date = models.DateField(auto_now_add=True)
+    booking_date = models.DateTimeField(default=timezone.now)
+    scheduled_date = models.DateTimeField(null=True)
 
     def __str__(self):
         return f"{self.customer.first_name} - {self.service.name}"
