@@ -1,10 +1,18 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --hover_brand: #d352d3cf;
+}
 .login-card{
 width: 550px;
 margin: 0 auto;
 margin-top: 50px;
-border: 2px solid #FF69B4;
+border: 2px solid #e75aa0;
 border-radius: 5px;
-padding: 20px;}
+padding: 20px;
+}
+
 .login-card .card-title {
   background-color: #FF69B4;
   color: #fff;
@@ -13,4 +21,7 @@ padding: 20px;}
   margin-top: 0;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+.login-card:hover{
+  box-shadow: 0 0 0 4px var(--hover_brand);
 }

@@ -42,33 +42,9 @@ body {
 .card {
   margin-bottom: 20px;
 }
-.dashboard-card .card-body{
-  color: white;
+.card:hover{
+  box-shadow: 0 0 0 8px #d352d3cf;
 }
-.dashboard-card.custom-1 .card-body {
-  background-color: #ffc107; /* Yellow */
-}
-
-.dashboard-card.custom-2 .card-body {
-  background-color: #28a745; /* Green */
-}
-
-.dashboard-card.custom-3 .card-body {
-  background-color: #dc3545; /* Red */
-}
-
-.dashboard-card.custom-4 .card-body {
-  background-color: #007bff; /* Blue */
-}
-
-.dashboard-card.custom-5 .card-body {
-  background-color: #6c757d; /* Gray */
-}
-
-.dashboard-card.custom-6 .card-body {
-  background-color: #17a2b8; /* Cyan */
-}
-
 .dashboard-card .card-footer{
   background-color: #ce29a2;
   color: #fff;
@@ -129,6 +105,18 @@ ABOUT US CSS
 /**
  END OF ABOUT US CSS
 **/
+/**
+ CSS For Contact Us Page
+**/
+.contact-card{
+  width: 550px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 2px solid #FF69B4;
+  border-radius: 5px;
+  padding: 20px;
+}
+
 /* Footer styles 
 footer {
   background-color: #333;

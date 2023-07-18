@@ -38,7 +38,7 @@
   <div class="row">
     {% for service in services %}
     <div class="col-md-4">
-      <div class="card">
+      <div class="card rounded-4">
         <img src="{{ service.image.url }}" alt="{{ service.name }}">
         <h5>{{ service.get_name_display }}</h5>
         <p>{{ service.description }}</p>
