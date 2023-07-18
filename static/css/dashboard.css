@@ -42,6 +42,14 @@ body {
 .card {
   margin-bottom: 20px;
 }
+.appointment-card{
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 2px solid #e75aa0;
+  border-radius: 5px;
+  padding: 20px;
+  }
 .card:hover{
   box-shadow: 0 0 0 8px #d352d3cf;
 }
