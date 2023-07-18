@@ -6,27 +6,59 @@
 <h4> Schedule an Appointment</h4>
   </div>
 </section>
-<div class="contact-card">
+<section>
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+{% endif %}
+</section>
+<div class="card">
   <div class="card-body">
-  <form method="post" action="{% url 'contact' %}">
+  <form method="post" action="{% url 'submit_appointment' %}">
     {% csrf_token %}
-    <!-- Other form fields -->
-    <div class="mb-3">
-      <label for="names" class="form-label">Names</label>
-      <input type="text" class="form-control" name="names">
+    <!-- Fields -->
+    
+    <div class="row">
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="names" class="form-label">Names</label>
+          <input type="text" class="form-control" id="names" name="names">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control" name="email">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="hairstyle" class="form-label">Choose Hairstyle</label>
+          <select id="hairstyle" name="hairstyle" class="form-control">
+            {% for service in services %}
+            <option value="{{ service.name }}">{{ service.get_name_display }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" name="email">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="date" class="form-label">Select a Date</label>
+        <input type="date" id="date" class="form-control" name="date">
+      </div>
+      <div class="col-md-8">
+        <div class="mb-2">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" name="message" placeholder="Write to us"></textarea>
+        </div>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="id_hairstyle" class="form-label">Choose Hairstyle</label>
-      <select id="id_hairstyle" name="hairstyle" class="form-control">
-        {% for service in services %}
-        <option value="{{ service.name }}">{{ service.get_name_display }}</option>
-        {% endfor %}
-      </select>
-    </div>
+    
     <input type="submit" value="Submit" class="btn btn-info" />
   </form>
   </div>

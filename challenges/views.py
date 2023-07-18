@@ -12,6 +12,8 @@ from django.shortcuts import get_object_or_404, redirect
 from .forms import updateAppointment
 from django.contrib import messages
 from django.urls import reverse
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 
 
 @login_required
@@ -49,7 +51,41 @@ def getServices(request):
     services = Service.objects.all()
     return render(request, "services.html", {'services': services})
 
+def submitAppointment(request):
+   # services = Service.objects.values_list('name', flat=True) #flat=true returns a list instead of a turple
+    services= Service.objects.all()
+    if request.method == 'POST':
+        names = request.POST['names']
+        email = request.POST['email']
+        hairstyle = request.POST['hairstyle']
+        date_selected = request.POST['date']
+        message = request.POST['message']
+
+        if not names or not email or not hairstyle or not date_selected or not message:
+            messages.error(request, "Please fill in all the fields")
+        else:
+            try:
+                validate_email(email)
+            except ValidationError:
+                messages.error(request, "Please enter a valid email address")
+            else:
+                try:
+                    service = services.get(name=hairstyle)
+                except Service.DoesNotExist:
+                    messages.error(request, "Invalid hairstyle selected.")
+                else:
+                    try:
+                        customer = Customer.objects.get(email=email)
+                    except Customer.DoesNotExist:
+                        customer = Customer(first_name=names, email=email)
+                        customer.save()
+                    appointment = Appointment(service=service, customer=customer, scheduled_date = date_selected)
+                    appointment.save()
+                    messages.success(request, "Appointment created successfully!")
+                    return redirect('contact')
+        
+    return redirect('contact')
+
 def getOptions(request):
-    services = Service.objects.values_list('name', flat=True) #flat=true returns a list instead of a turple
-    servs= Service.objects.all()
-    return render(request, 'contact.html', {'services': servs})
+    services = Service.objects.all()
+    return render(request, 'contact.html', {'services': services})

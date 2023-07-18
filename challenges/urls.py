@@ -8,5 +8,6 @@ urlpatterns = [
      path('appointments/', appointments, name='appointments'),
      path('services/',getServices, name='services'),
      path('contact/', getOptions, name="contact"),
+     path('submit/', submitAppointment, name='submit_appointment'),
      path('appointment/<int:appointment_id>/update', update_appoitnment, name='update_appointment'),
 ]
