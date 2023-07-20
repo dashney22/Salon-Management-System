@@ -1,2 +1,12 @@
+# .gitignore
 db.sqlite
 /migrations/
+/media/
+/static/
+venv/
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
