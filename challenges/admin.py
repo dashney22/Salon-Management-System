@@ -4,7 +4,6 @@ from .models import *
 # Register your models here.
 # Import model name (.[model_name] if they from the same folder!) admin.site.Register
 
-admin.site.register(Book)
 
 # Admin customisation
 
